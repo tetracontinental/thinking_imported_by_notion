@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            max-width: 900px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #007acc;
+        }
+        .post-list {
+            list-style: none;
+            padding: 0;
+        }
+        .post-item {
+            margin: 15px 0;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.3s;
+        }
+        .post-item a {
+            text-decoration: none;
+            color: #007acc;
+            font-size: 1.2em;
+        }
+        .post-item a:hover {
+            text-decoration: underline;
+        }
+        .post-item:hover {
+            background-color: #f9f9f9;
+        }
+        .post-date {
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Blog</h1>
+        <ul class="post-list">
+            <!-- Jekyllがここに投稿の一覧を挿入します -->
+            {% for post in site.posts %}
+            <li class="post-item">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <div class="post-date">{{ post.date | date: "%Y年%m月%d日" }}</div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
