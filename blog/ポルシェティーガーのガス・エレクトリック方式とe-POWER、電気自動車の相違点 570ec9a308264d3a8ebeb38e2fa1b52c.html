@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>ポルシェティーガーのガス・エレクトリック方式とe-POWER、電気自動車の相違点</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="570ec9a3-0826-4d3a-8ebe-b38e2fa1b52c" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_tim_peake_spacewalk.jpg" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🚚</span></div><h1 class="page-title">ポルシェティーガーのガス・エレクトリック方式とe-POWER、電気自動車の相違点</h1><p class="page-description"></p></header><div class="page-body"><h2 id="46439a88-ce6b-4c6e-93c7-e2140f4e2af0" class="">結論</h2><p id="44dd0938-1abc-4521-8d5d-4ce83999f559" class="">ガス・エレクトリック方式とe-POWERは走行用バッテリーを搭載しているか否かであり、技術の進歩によって効率的になった。また、電気自動車と同様に制御も簡単である。しかし、燃料を用いてガソリンで発電するか否かで電気自動車とは違う。</p><h2 id="a863d4eb-3d95-4318-92ef-1c76d6d825fe" class="">動機</h2><p id="a35e7a27-ae48-46a1-bb0b-98ba31486e70" class="">電動アシスト自転車から電気自動車に関心を持ち、調べるうちにe-POWERと言われる技術を見つけ、なぜ一見無駄に見える行為をしているのだろうと考えた。また、それに伴い私がプレイしたことがあるゲームに登場するポルシェティーガーを思い出し、二次大戦中からそのような方式を採用するに至った経緯を調べ、現代の電気自動車・エンジン車のメリット・デメリットについて整理したかったためである。</p><h2 id="efc9d5f5-4870-4419-917a-cb1abf149f85" class="">比較</h2><ol type="1" id="9ab72f0c-e2ec-4d88-aba9-0150515c19ee" class="numbered-list" start="1"><li>ポルシェティーガーのメリット・デメリット</li></ol><ol type="1" id="022fcbe3-c9be-4991-a152-621e1bc0dfed" class="numbered-list" start="2"><li>e-POWERのメリット・デメリット</li></ol><ol type="1" id="3e9a0ef4-1371-44f9-94e2-eed2c95b52e8" class="numbered-list" start="3"><li>電気自動車とガソリン車</li></ol><h2 id="abdb6a24-3199-4313-b632-45bd47c5b755" class="">ポルシェティーガーについて</h2><p id="5012ec7a-8485-473f-b2c8-6f6dced484dd" class="">ドイツのポルシェティーガー(VK4501(P))は名作戦車として知られるティーガーⅠ(Panzerkampfwagen VI Tiger)と同時に開発され、ティーガーⅠとの採用競争に敗れた試作戦車である。</p><figure id="d92d02f0-2f8b-40fb-bdff-52e28d96b67b" class="image"><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tiger_(P).svg/250px-Tiger_(P).svg.png"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tiger_(P).svg/250px-Tiger_(P).svg.png"/></a><figcaption><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tiger_%28P%29.svg/250px-Tiger_%28P%29.svg.png">https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tiger_(P).svg/250px-Tiger_(P).svg.png</a></figcaption></figure><p id="f51fa841-a073-43ba-9e68-731b4d0130df" class="">この戦車の特異なところはガソリンエンジンで発電し、モータを回すガス・エレクトリック方式が採用されているところである。なぜなら、「加速性能に優れ、左右旋回（操行）も容易な電気式駆動装置が適している」と考えられたからである。</p><p id="d1772858-af42-4677-9d25-1d49522d04c7" class="">実際に、この方式では左右旋回や操t作を行う際に電力の流量で操作するため、ギアの入れ替えやステアリングの利便性が向上する。そのため、当時の運用部隊からの操縦性の評価は高く、変速機の故障も少なかった。</p><p id="2f81ec20-3780-4047-b9a1-efd4549e9ead" class="">一方、この車体に対して出力不足のエンジンを搭載しており、発電量が不足してしまうという欠点もあった。</p><p id="ba25d065-f782-4247-8a1a-7d55085e441d" class="">このような方式をするに至るまでの経緯として、ポルシェ博士は幼少期から電気に興味を持ち、新型の電気自動車を考案したことなどから、彼の個人的な経験も一因として考えられる。また、ここで電気自動車のほうがガソリン車よりも先に発明されたという知見を得たため、追加Ⅰで歴史と技術的な難易度について調べる。</p><h2 id="b5bd632e-09a1-4c0d-82c8-d206dcab76ba" class="">追加Ⅰ:歴史と技術的な難易度について</h2><p id="a5f6f935-7466-4c62-96f0-39b05c184401" class="">イェドリク・アーニョシュは1828年に、電動機を模型車両に載せて動かすことに成功し、ロバート・アンダーソンは1830年代に一次電池を搭載した世界初の電気自動車を発明した。</p><p id="6725f4b7-3fbb-4d42-a5ae-bffc5200b51f" class="">一方、ガソリン車はガソリンエンジンの基礎となる4ストロークエンジンがニコラウス・オットーによって1876年に開発され、世界初のガソリン車はゴットリープ・ダイムラーとヴィルヘルム・マイバッハによって開発された1885年頃にカール・ベンツも開発を成功させ、特許を先に取得したベンツが発明者と言われている。</p><p id="7a80f171-f35a-4a03-8c03-042ee1cbf66f" class="">よって、開発された時期としては電気自動車は1830年代でガソリン車は1885年頃であるため、電気自動車のほうが先に発明されている。</p><p id="82b41be3-7e42-475c-96c9-023dfeebc0ac" class="">電気自動車の難点として蓄電・送電の技術があり、送電網が整うまでは電気が大幅に使えたわけではなく、バッテリーの技術が未発達であったことから、航続距離の面でもガソリン車に劣っていた。</p><p id="bc0fd85b-2b09-4b84-8a87-89ea06afac1e" class="">近年バッテリーの技術が進化し、モーターなどもエンジンに比べて技術的に制作しやすく、電気自動車が安価で制作しやすくなったため、多く市場に出回り始めたと考えられる。</p><h2 id="2e0de232-8d0a-4e0c-9c01-e46660b11fe3" class="">e-POWERについて</h2><p id="c9895571-03ba-49fa-9597-bb0b2740186d" class="">e-POWERはガス・エレクトリック方式とは違い、エンジンで発電した電気をバッテリーに保存し、モーターを動作させる。バッテリーの技術の向上が昔との相違点であり、これによってエンジンをより効率的に利用できるようになった。具体的にはエンジンの最高効率回転数で発電するため、燃費においても、トルク性能的にも有利である。また、モーターのトルク特性より、加減速が素早く、電子制御なのでエンジンに比べてレスポンスが良いことが挙げられる。さらに、日産は熱効率50%の発電専用のガソリンエンジンを開発した。これは、モーターとエンジンの役割を走行と発電に役割分担を行うことで実現している。</p><figure id="1e9d84f1-9c8b-4ca4-9afe-7a7ba792d684" class="image"><a href="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled.png"><img style="width:1720px" src="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled.png"/></a><figcaption><a href="https://www.nissan-global.com/JP/INNOVATION/TECHNOLOGY/ARCHIVE/E_POWER50/">https://www.nissan-global.com/JP/INNOVATION/TECHNOLOGY/ARCHIVE/E_POWER50/</a></figcaption></figure><p id="db8d728f-bc0c-49c5-b48a-d79db324b912" class="">一方、ポルシェティーガーと同様に、エンジンとモーターを搭載することによって車重が重くなることも挙げられる。</p><p id="637d2b40-dda3-4f73-9eae-26ae7e07334a" class="">参考としてセレナ(2016年モデル、ハイブリッド車)は燃費が15.0km/L、車重が1630kgほどであり、セレナ(2023年モデル、e-POWER)は燃費が19.3km/L、車重が1810kgほどである。</p><h2 id="1efc1021-602f-454a-88a4-a4542db160a5" class="">電気自動車とガソリン車</h2><div id="6f1d3df8-28e7-4e72-b9e0-e3a5ad9d0f5d" class="column-list"><div id="6bb791f4-1c03-4407-940e-7298daa06ba3" style="width:56.25%" class="column"><figure id="8333d5da-a2ed-4d98-8134-067544987239" class="image"><a href="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled%201.png"><img style="width:336px" src="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled%201.png"/></a><figcaption><a href="https://evdays.tepco.co.jp/entry/2022/03/31/000029">https://evdays.tepco.co.jp/entry/2022/03/31/000029</a></figcaption></figure></div><div id="e281ca68-5f99-45d2-a2d9-91dc397b8900" style="width:43.75000000000001%" class="column"><figure id="643073f3-c9ff-4444-88cc-ee55b6cb9cb7" class="image"><a href="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled%202.png"><img style="width:1000px" src="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled%202.png"/></a></figure></div></div><p id="54efaeb4-87ba-4254-849e-dd3a64c53656" class="">まず環境の点から言うと、モーターが圧倒的に見えるが、火力発電所での効率が30%~50%程度である。電気自動車に供給するまでの効率を考えると、太陽光発電などを利用すれば走行に使う電力で二酸化炭素は発生しないが、製造過程などでの発生量を考えると環境にどちらが良いかはすぐには断言できない。なお、効率の観点からの検討は文献19にて述べられており、当文献によると電気自動車のほうがガソリンハイブリッド車よりも4%ほど効率が高いという結果が出ている。</p><p id="97184b32-a2b5-446b-99ef-bd5f3ba85604" class="">航続距離としては、e-POWERを搭載したセレナは約800km、比較としてテスラ・モデルYで605kmであり、200km程度有利である。車体の大きさなどを考慮していないが、航続距離に限らず、充電スポットがガソリンスタンドに比べてまだ充実せず、ガソリン車に優勢である。</p><p id="00fee9bd-e839-4d6f-8333-500309a08fc9" class="">また、車重の差があり、同じサイズの車であっても電気自動車のほうがおよそ200kg～500kg程重量が大きくなる。</p><hr id="ef3c7c4e-a244-45bf-b260-b75ef902abdf"/><h2 id="285a2aa6-2067-41af-af70-dcf0bd273518" class="">農業機械は電気式であるべきか</h2><p id="df6f8686-35e5-4720-8857-9f07a7d05bcd" class="">ここまでの資料から、純粋にモーターだけであれば低回転で大きなトルクが出せるため、農作業を行うことに適しているように見える。よって、今回のテーマである農業について、どのような駆動方式を採用するのが良いかということを検討する。</p><p id="4463d88f-f6d4-4e29-a248-991b2c6eeeb9" class="">動力源については、現在のトラクターはディーゼルエンジンを利用したものが多い。これは図から分かる通り、左のガソリンエンジンよりも右のディーゼルエンジンのほうが最大トルクは大きく、低回転数でそのトルクを発揮するからである。単に馬力のみで言えばガソリンエンジンのほうが大きいが、それを発揮するまでの回転数が必要であると同時に、燃料消費率も高くなってしまう。(燃料消費率とはその仕事を行うために必要な燃料の量を表し、値が小さければ小さいほど良い。)これらの理由からトラクターではディーゼルエンジンを搭載している。では、これをモーターに置き換えるとどうなるか。例としてクボタAgri Roboを挙げる。ここでは、同車種の燃費情報はなかったため、国土交通省による調査結果で車重と総排気量が近似しているものの燃費を採用した。その調査によると6.90km/Lであったため、同車種の燃料タンクの大きさである120Lから、航続距離は828kmとわかる。一方、電気自動車で同程度の航続距離距離を求めるためにeCanter(トラック、三菱ふそう）の電費を用いたところ、1.92km/kWhであった。よって、その航続距離を得るためには431.25kWhのバッテリーが必要である。そのバッテリーの重量はリチウムイオン二次電池のエネルギー密度である155Wh/kgを用いると、2782.26kgと算出できる。よって、およそ2.7tのバッテリーが必要である。このバッテリーの重量は車体総重量に見合わない程重い。そのため、同程度の航続距離はすぐには実現できず、航続距離を短くするにしても、まだ課題は多い。</p><figure id="36262343-4eff-4499-b385-99dfb83c7b69" class="image"><a href="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled%203.png"><img style="width:571px" src="%E3%83%9B%E3%82%9A%E3%83%AB%E3%82%B7%E3%82%A7%E3%83%86%E3%82%A3%E3%83%BC%E3%82%AB%E3%82%99%E3%83%BC%E3%81%AE%E3%82%AB%E3%82%99%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F%E3%81%A8e-POWER%E3%80%81%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E7%9B%B8%E9%81%95%E7%82%B9%20570ec9a308264d3a8ebeb38e2fa1b52c/Untitled%203.png"/></a><figcaption><a href="https://vehicle-cafeteria.com/T04TorqueHorsePower.html#google_vignette">https://vehicle-cafeteria.com/T04TorqueHorsePower.html</a></figcaption></figure><p id="ad8ae5b3-dcd9-4ca8-9fbb-07838e088fab" class="">また、充電にかかる時間もデメリットの一つである。2023年、クボタは電動小型トラクターを開発した。このトラクターは1時間の急速充電で3−4時間ほどの連続稼働ができるとしているが、現在のトラクターであれば給油はは5−10分程度ですべて完了してしまうため、まだエンジンに充電時間の面でも劣っている。そのため、クボタは水素燃料による燃料電池式のトラクターの開発を進めており、2030年までに実用化を目指している。</p><p id="6209dd14-daaa-4e2e-b5b9-5b47d3662c7f" class="">一方、静音性能という面では電気式に軍配が上がる。例えば、町中の公園での作業であったり、住宅地に近隣する畑作業を行うことを考える。電気式のトラクターであれば、早朝からの作業や日中の騒音被害を低減できる。</p><p id="c0d7a4fb-f61c-4d62-b81a-a34d863423a1" class="">そして、トルク面ではモーターとディーゼルエンジンのそれぞれのメリット・デメリットがあるが、変速機が簡略化できるためモーターのほうが制御しやすいとも考えられる。どれほど高トルクをモーターが出せるか、という点が今後の課題となる。</p><p id="48369e04-38a3-4746-98b4-195b8648b242" class="">よって、結論としては現状の電気式のトラクターは市街地などの小規模の作業ではエンジン式よりも勝っており、大規模な圃場であったとしてもバッテリーではない電気式のトラクターは将来的に出現し、徐々に浸透していくと考えられる。</p><hr id="5e664eff-725c-4363-b236-2c1b33ce9df8"/><p id="dbe5b709-5925-4708-982f-27cdf66ec843" class="">参考文献:</p><ol type="1" id="8a79278d-82a2-49d6-b32d-fbb4e9e1d404" class="numbered-list" start="1"><li><a href="https://ja.wikipedia.org/wiki/VK4501(P)">https://ja.wikipedia.org/wiki/VK4501(P)</a></li></ol><ol type="1" id="b486da2d-4da2-4380-aa66-1f9aa7d1e456" class="numbered-list" start="2"><li><a href="https://ja.wikipedia.org/wiki/%E3%82%AC%E3%82%B9%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F">https://ja.wikipedia.org/wiki/ガス・エレクトリック方式</a></li></ol><ol type="1" id="05796358-e2d8-40c0-a019-c88bb8971944" class="numbered-list" start="3"><li><a href="https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%A3%E3%83%BC%E3%82%BC%E3%83%AB%E3%83%BB%E3%82%A8%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%96%B9%E5%BC%8F">https://ja.wikipedia.org/wiki/ディーゼル・エレクトリック方式</a></li></ol><ol type="1" id="28c52783-e64a-4f2a-baa8-562d6f46b9a9" class="numbered-list" start="4"><li><a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A7%E3%83%AB%E3%83%87%E3%82%A3%E3%83%8A%E3%83%B3%E3%83%88%E3%83%BB%E3%83%9D%E3%83%AB%E3%82%B7%E3%82%A7">https://ja.wikipedia.org/wiki/フェルディナント・ポルシェ</a></li></ol><ol type="1" id="07466e65-ab2f-480c-a99c-6a3184b29b06" class="numbered-list" start="5"><li><a href="https://ja.wikipedia.org/wiki/%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A#:~:text=%E5%8F%96%E5%BE%97%E3%81%95%E3%82%8C%E3%81%9F%E3%80%82-,%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%AE%E6%AD%B4%E5%8F%B2%E3%81%AE%E5%A7%8B%E3%81%BE%E3%82%8A,%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A%E3%82%92%E7%99%BA%E6%98%8E%E3%81%97%E3%81%9F%E3%80%82">https://ja.wikipedia.org/wiki/電気自動車</a></li></ol><ol type="1" id="f285121b-50da-4ca7-8a26-72bbfe69a2c5" class="numbered-list" start="6"><li><a href="https://global.toyota/jp/kids/history/automobile/">https://global.toyota/jp/kids/history/automobile/</a></li></ol><ol type="1" id="477cff30-9022-4fc4-827a-7959affedf3f" class="numbered-list" start="7"><li><a href="https://www.nextage.jp/gaisya_guide/recommend/269018/#:~:text=1885%E5%B9%B4%EF%BC%9A%E3%82%AC%E3%82%BD%E3%83%AA%E3%83%B3%E8%87%AA%E5%8B%95%E8%BB%8A%E3%81%8C%E7%99%BA%E6%98%8E%E3%81%95%E3%82%8C%E3%82%8B&amp;text=%E8%A9%A6%E8%A1%8C%E9%8C%AF%E8%AA%A4%E3%82%92%E9%87%8D%E3%81%AD%E3%80%81%E5%9B%9B,%E3%83%99%E3%83%B3%E3%83%84%E3%81%A8%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82">https://www.nextage.jp/gaisya_guide/recommend/269018/</a></li></ol><ol type="1" id="aa5f7335-4cec-4b94-89fe-1d895cffd545" class="numbered-list" start="8"><li><a href="https://www.jsae.or.jp/engine_rev/column/c_13-05.html">https://www.jsae.or.jp/engine_rev/column/c_13-05.html</a></li></ol><ol type="1" id="7263e3bb-3e5b-4882-88cb-3c1f5a38416c" class="numbered-list" start="9"><li><a href="https://www2.nissan.co.jp/BRAND/EPOWER/">https://www2.nissan.co.jp/BRAND/EPOWER/</a></li></ol><ol type="1" id="298edae3-5c9b-4e46-98ce-4c72ad416ad1" class="numbered-list" start="10"><li><a href="https://xn--1ck4axg801pj1o.net/e-power/serena-e-power-kouzokukyori.html">https://新型セレナ.net/e-power/serena-e-power-kouzokukyori.html</a></li></ol><ol type="1" id="45b70f19-8189-469c-9b7c-8bf93a23d3ac" class="numbered-list" start="11"><li><a href="https://www.tesla.com/ja_jp/support/range-calculator-ref">https://www.tesla.com/ja_jp/support/range-calculator-ref</a></li></ol><ol type="1" id="c01662c9-d504-498a-aeb2-31192bf5916a" class="numbered-list" start="12"><li><a href="https://xtech.nikkei.com/atcl/nxt/column/18/00138/060701057/">https://xtech.nikkei.com/atcl/nxt/column/18/00138/060701057/</a></li></ol><ol type="1" id="fe823802-fbdd-4183-9270-24d972d015a9" class="numbered-list" start="13"><li><a href="https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00115/00003/#:~:text=%E4%B8%80%E8%88%AC%E3%81%AB%E3%80%81%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%81%AB%E3%81%AF%E6%9C%80%E3%82%82,%E3%81%AF70%EF%BD%9E80Nm%E3%81%A0%E3%80%82">https://xtech.nikkei.com/atcl/nxt/mag/nmc/18/00115/00003/</a></li></ol><ol type="1" id="c7cfb722-4ca5-4ac6-bfcc-4653ecb23883" class="numbered-list" start="14"><li><a href="https://ja.wikipedia.org/wiki/%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E3%82%AB%E3%83%BC#%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA%E6%96%B9%E5%BC%8F">https://ja.wikipedia.org/wiki/ハイブリッドカー</a></li></ol><ol type="1" id="7b764e02-8abb-42ff-a5e6-bfe60134d9ba" class="numbered-list" start="15"><li><a href="https://ja.wikipedia.org/wiki/%E4%BA%8C%E6%AC%A1%E9%9B%BB%E6%B1%A0%E5%BC%8F%E9%9B%BB%E6%B0%97%E8%87%AA%E5%8B%95%E8%BB%8A">https://ja.wikipedia.org/wiki/二次電池式電気自動車</a></li></ol><ol type="1" id="2f2e5ee0-8bf5-45f3-ac2e-0e93fd76a5aa" class="numbered-list" start="16"><li><a href="https://evdays.tepco.co.jp/entry/2022/03/31/000029">https://evdays.tepco.co.jp/entry/2022/03/31/000029</a></li></ol><ol type="1" id="d6ba7d07-cb2a-4a35-a72e-86e8d132ee06" class="numbered-list" start="17"><li><a href="https://vehicle-cafeteria.com/T04TorqueHorsePower.html">https://vehicle-cafeteria.com/T04TorqueHorsePower.html</a></li></ol><ol type="1" id="08ce0c35-18e7-437a-afd5-d5598236f81e" class="numbered-list" start="18"><li><a href="https://kimura.ez.u-tokai.ac.jp/kimura-lab/ev/record.html">https://kimura.ez.u-tokai.ac.jp/kimura-lab/ev/record.html</a></li></ol><ol type="1" id="e9afea1a-3122-4ccc-b075-961a27e30681" class="numbered-list" start="19"><li><a href="https://car.watch.impress.co.jp/docs/news/1308862.html">https://car.watch.impress.co.jp/docs/news/1308862.html</a></li></ol><ol type="1" id="57f60c90-3f14-4f8f-962c-ccff92a76fe6" class="numbered-list" start="20"><li><a href="https://www.dir.co.jp/report/column/20230113_010985.html">https://www.dir.co.jp/report/column/20230113_010985.html</a></li></ol><ol type="1" id="9df197cd-0a2e-4a84-9398-11d3d04ddf56" class="numbered-list" start="21"><li><a href="https://blog.evsmart.net/electric-vehicles/electric-vehicles-are-more-efficient-than-ice/">https://blog.evsmart.net/electric-vehicles/electric-vehicles-are-more-efficient-than-ice/</a></li></ol><ol type="1" id="24e531eb-3837-4122-a49d-54305a879e92" class="numbered-list" start="22"><li><a href="https://www.dir.co.jp/report/column/20230113_010985.html">https://www.dir.co.jp/report/column/20230113_010985.html</a></li></ol><ol type="1" id="7fe1f7cc-fe44-4b5e-9ef6-385068c77420" class="numbered-list" start="23"><li><a href="https://www.mlit.go.jp/common/000111224.pdf">https://www.mlit.go.jp/common/000111224.pdf</a></li></ol><ol type="1" id="cd95b36f-2e69-45e2-aa3c-13668625d863" class="numbered-list" start="24"><li><a href="https://agriculture.kubota.co.jp/img_sys/specifications/f77d89104860913cef764b8858800447/2-30-2-0035-02_spec.pdf">https://agriculture.kubota.co.jp/img_sys/specifications/f77d89104860913cef764b8858800447/2-30-2-0035-02_spec.pdf</a></li></ol><ol type="1" id="0e9a76c9-9739-44e4-950a-844acb8bf2bb" class="numbered-list" start="25"><li><a href="https://edu.yz.yamagata-u.ac.jp/developer/WebClass/@WebClassEssayQuestionAnswerIFrame.asp?id=66">https://edu.yz.yamagata-u.ac.jp/developer/WebClass/@WebClassEssayQuestionAnswerIFrame.asp</a></li></ol><ol type="1" id="6d7b54ba-10e3-4f7d-8a2c-eb551b9ba83d" class="numbered-list" start="26"><li><a href="https://www.mitsubishi-fuso.com/wp-content/uploads/2019/09/ecanter.pdf">https://www.mitsubishi-fuso.com/wp-content/uploads/2019/09/ecanter.pdf</a></li></ol><ol type="1" id="3037c8b0-97a3-404f-8cc1-342566d974a4" class="numbered-list" start="27"><li><a href="https://www.webcartop.jp/2022/07/931953/">https://www.webcartop.jp/2022/07/931953/</a></li></ol><ol type="1" id="42ceefda-7656-494f-8bba-0b175af19562" class="numbered-list" start="28"><li><a href="https://www.n-nets.co.jp/product/lithium.html">https://www.n-nets.co.jp/product/lithium.html</a></li></ol><ol type="1" id="73644055-918f-4a51-9efd-c3e817c5861c" class="numbered-list" start="29"><li><a href="https://fullload.bestcarweb.jp/news/365202">https://fullload.bestcarweb.jp/news/365202</a></li></ol><ol type="1" id="b4f5c402-3761-46f6-b48d-c0cf76737cb6" class="numbered-list" start="30"><li><a href="https://hatakemon.com/electric_tractor_solectrac/">https://hatakemon.com/electric_tractor_solectrac/</a></li></ol><p id="083741df-6a28-4777-b233-1b9894bf806d" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
