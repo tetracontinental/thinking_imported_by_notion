@@ -1,0 +1,2 @@
+# thinking_imported_by_notion
+考えていたことを、notionからGitHubに持ってきた。Notionのアプリの調子が悪くて、これならローカルで編集してcommitしたほうがよさそうだった。
